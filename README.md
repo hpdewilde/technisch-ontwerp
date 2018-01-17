@@ -11,7 +11,7 @@ Op deze (sport) trivia website kunnen gebruikers spelen tegen vrienden, kennisse
 * Gebruikers kunnen tegen Facebook vrienden spelen, of een username zoeken om hier tegen te spelen. 
 * Gebruikers kunnen ook tegen een willekeurige tegenstander spelen. 
 * Gebruikers kunnen hun eigen trivia vraag toevoegen aan de database. Dit gebeurt volgens dit proces:
-** De gebruiker typt de gewenste vraag en kiest een bijbehorende categorie
+* De gebruiker typt de gewenste vraag en kiest een bijbehorende categorie
 * De vraag komt op een pagina terecht waar andere gebruikers de vraag kunnen beoordelen van 1 tot 5 sterren. Andere gebruikers kunnen ook suggesties doen om de vraag te verbeteren.
 * Een moderator houdt deze pagina in de gaten en voegt eventueel goed beoordeelde vragen toe aan de database.
 * Eenmaal toegevoegd aan de database, komt de vraag terecht in trivia games van gebruikers.
