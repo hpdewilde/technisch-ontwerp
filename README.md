@@ -1,5 +1,5 @@
 # technisch-ontwerp
-## + Projectvoorstel (updated) groep IK07
+## Projectvoorstel (updated) groep IK07
 ##### Samenvatting
 Op deze (sport) trivia website kunnen gebruikers spelen tegen vrienden, kennissen of willekeurige tegenstanders. Deze (sport) trivia site stimuleert zijn gebruikers om zelf mee te denken in het maken van vragen en deze dan ook daadwerkelijk te maken. Er zijn leaderboards die continu bijhouden welke gebruikers het beste presteren op het gebied van vragen beantwoorden, maar ook op het gebied van vragen maken en beoordelen. 
 
@@ -7,32 +7,32 @@ Op deze (sport) trivia website kunnen gebruikers spelen tegen vrienden, kennisse
 * Gebruikers moeten zich kunnen aanmelden met Facebook of e-mail en vervolgens een username en wachtwoord kunnen kiezen.
 * Na registratie kunnen gebruikers inloggen met de door hun gekozen methode bij de registratie.
 * Gebruikers kunnen een trivia Quiz starten. 
-* Gebruikers kunnen kiezen of ze 1 tegen 1 of 2 tegen 2 willen spelen. 
-* Gebruikers kunnen tegen Facebook vrienden spelen, of een username zoeken om hier tegen te spelen. 
-* Gebruikers kunnen ook tegen een willekeurige tegenstander spelen. 
-* Gebruikers kunnen hun eigen trivia vraag toevoegen aan de database. Dit gebeurt volgens dit proces:
-* De gebruiker typt de gewenste vraag en kiest een bijbehorende categorie
-* De vraag komt op een pagina terecht waar andere gebruikers de vraag kunnen beoordelen van 1 tot 5 sterren. Andere gebruikers kunnen ook suggesties doen om de vraag te verbeteren.
-* Een moderator houdt deze pagina in de gaten en voegt eventueel goed beoordeelde vragen toe aan de database.
-* Eenmaal toegevoegd aan de database, komt de vraag terecht in trivia games van gebruikers.
-* Ongepaste vragen moeten gereport kunnen worden door gebruikers, de moderator bepaald vervolgens of ze verwijdert worden en of de maker van de vraag geband wordt. 
-* Er zijn leaderboards die bijhouden hoeveel vragen de gebruikers hebben toegevoegd, hoe vaak de gebruikers andere vragen hebben ‘gerate’ (beoordeeld), hoeveel van hun vragen zijn ‘gerate’ door anderen, hoeveel suggesties zij hebben gedaan om andermans vragen te verbeteren. 
-* De gebruiker heeft een profiel met statistieken, hierin wordt geregistreerd hoe vaak hij/zij gewonnen heeft en hoeveel procent van de vragen hij/zij goed heeft. 
-* Er zijn leaderboards waarin wordt bijgehouden welke gebruikers de meeste ‘wins’ hebben en welke gebruikers het hoogste percentage goede antwoorden geven. 
-* Gebruikers moeten kunnen uitloggen. 
-* Gebruikers moeten zich kunnen aanmelden met Facebook
+Gebruikers kunnen kiezen of ze 1 tegen 1 of 2 tegen 2 willen spelen. 
+Gebruikers kunnen tegen Facebook vrienden spelen, of een username zoeken om hier tegen te spelen. 
+Gebruikers kunnen ook tegen een willekeurige tegenstander spelen. 
+Gebruikers kunnen hun eigen trivia vraag toevoegen aan de database. Dit gebeurt volgens dit proces:
+De gebruiker typt de gewenste vraag en kiest een bijbehorende categorie
+De vraag komt op een pagina terecht waar andere gebruikers de vraag kunnen beoordelen van 1 tot 5 sterren. Andere gebruikers kunnen ook suggesties doen om de vraag te verbeteren.
+Een moderator houdt deze pagina in de gaten en voegt eventueel goed beoordeelde vragen toe aan de database.
+Eenmaal toegevoegd aan de database, komt de vraag terecht in trivia games van gebruikers.
+Ongepaste vragen moeten gereport kunnen worden door gebruikers, de moderator bepaald vervolgens of ze verwijdert worden en of de maker van de vraag geband wordt. 
+Er zijn leaderboards die bijhouden hoeveel vragen de gebruikers hebben toegevoegd, hoe vaak de gebruikers andere vragen hebben ‘gerate’ (beoordeeld), hoeveel van hun vragen zijn ‘gerate’ door anderen, hoeveel suggesties zij hebben gedaan om andermans vragen te verbeteren. 
+De gebruiker heeft een profiel met statistieken, hierin wordt geregistreerd hoe vaak hij/zij gewonnen heeft en hoeveel procent van de vragen hij/zij goed heeft. 
+Er zijn leaderboards waarin wordt bijgehouden welke gebruikers de meeste ‘wins’ hebben en welke gebruikers het hoogste percentage goede antwoorden geven. 
+Gebruikers moeten kunnen uitloggen. 
+Gebruikers moeten zich kunnen aanmelden met Facebook
 
 ##### Minimum viable product. 
-* Gebruikers moeten zich kunnen aanmelden met e-mail en vervolgens een username en wachtwoord kunnen kiezen.
-* Na registratie kunnen gebruikers inloggen bij de inlog pagina.
-* Gebruikers kunnen een trivia Quiz starten en krijgen feedback of het antwoord goed of fout was. 
-* De vragen komen uit een online database, deze is geïntegreerd in onze website. 
-* Gebruikers kunnen tegen iemand spelen, niet real-time. 
-* Gebruikers kunnen tegen andere usernames spelen. 
-* Gebruikers kunnen ook tegen een willekeurige tegenstander spelen. 
-* Gebruikers kunnen hun eigen trivia vraag insturen, deze wordt beoordeeld door de moderator en toegevoegd wanneer deze ‘goed genoeg is’.
-* Gebruikers moeten hun account kunnen aanpassen, bijv. hun email. 
-* Gebruikers moeten kunnen uitloggen.
+Gebruikers moeten zich kunnen aanmelden met e-mail en vervolgens een username en wachtwoord kunnen kiezen.
+Na registratie kunnen gebruikers inloggen bij de inlog pagina.
+Gebruikers kunnen een trivia Quiz starten en krijgen feedback of het antwoord goed of fout was. 
+De vragen komen uit een online database, deze is geïntegreerd in onze website. 
+Gebruikers kunnen tegen iemand spelen, niet real-time. 
+Gebruikers kunnen tegen andere usernames spelen. 
+Gebruikers kunnen ook tegen een willekeurige tegenstander spelen. 
+Gebruikers kunnen hun eigen trivia vraag insturen, deze wordt beoordeeld door de moderator en toegevoegd wanneer deze ‘goed genoeg is’.
+Gebruikers moeten hun account kunnen aanpassen, bijv. hun email. 
+Gebruikers moeten kunnen uitloggen.
 
 ##### De website slogan.
 Trivia; Create, Play, Compete. 
@@ -137,9 +137,12 @@ NOTE: Na ingelogd te zijn krijgt de gebruiker standaard een website header met n
 Play
 Nadat de gebruiker is ingelogd, komt hij/zij op een pagina met een grote PLAY knop. Als op deze button geklikt wordt, gaat de gebruiker naar question.html. Hier start het spel en krijgt de gebruiker een triviavraag te zien die binnen 10 seconden beantwoord moet worden.
 ```sh
-@app.route("/play", methods = ["GET"])
+@app.route("/play", methods = ["GET", "POST"])
 def play():
-    return render_template("play.html")
+    if request.method == "POST":
+        return render_template("question.html")
+    else:
+        return render_template("play.html")
 ```
 
 Question
@@ -162,6 +165,7 @@ def question():
 ```
 
 Create 
+De user kan kiezen tussen twee knoppen: 'Create' en 'Rate'. Met de value achter deze button kunnen we de user dan naar de HTML pagina van keuze sturen.
 ```
 @app.route(“/create”, methods = [“GET”, “POST”]
 def create():
@@ -177,6 +181,7 @@ def create():
 ```
 
 Create_question
+De user vult alle benodigde informatie in en wordt vervolgens weer naar dezelfde pagina geredirect.
 ```
 @app.route(“/create_question”, methods = [“GET”, “POST”]
 def create_question():
@@ -192,6 +197,7 @@ def create_question():
 ```
 
 Leaderboard
+Hier wordt enkel een GET request uitgevoerd. Alle data relevant voor de leaderboards wordt getoond.
 ```
 @app.route(“leaderboards”, methods = [“GET”]
 def leaderboards():
@@ -199,6 +205,7 @@ def leaderboards():
 ```
 
 Profile
+De user kan hier zijn profielinformatie zien. Ook kan er op een knop geklikt worden die je naar de Settings pagina brengt, waar het mogelijk is de profielinformatie te wijzigen.
 ```
 @app.route(“profile”, methods = [“GET”, “POST”]
 def profile():
