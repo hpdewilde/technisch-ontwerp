@@ -175,8 +175,12 @@ Login is nodig voor alle acties na het login scherm, dus bijvoorbeeld voor play 
 def generate_question():
 ```
 Een vraag moet uit de api gehaald kunnen worden of uit het create database. Zodat de vragen random worden gekozen uit de API of het database. 
+```
+def 
+```
 
-Deze functies zullen in de application.py zitten
+
+* Deze functies zullen in de application.py zitten
 ```
 def register():
 ```
@@ -189,6 +193,10 @@ De user moet kunnen uitloggen en de sessie moet worden gecleared.
 def login():
 ```
 De user moet kunnen inloggen, de sessie moet worden gesaved. 
+```
+def get_statistics():
+```
+De statistieken van alle spelers worden opgehaald en in een rekensom gegooid, deze bepaald hun ranking in de leaderboards. 
 
 ##### Plugins en frameworks
 Er wordt gebruikt gemaakt van de jService API, dit is een database met meer dan 156.800 trivia vragen. We proberen deze vragen te filteren op sportvragen, aangezien we een sport trivia website willen bouwen. Echter nemen we in onze MVP (minimum viable product) genoegen met het implementeren van de gehele database in onze website. (http://jservice.io)
