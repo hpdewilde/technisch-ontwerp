@@ -4,9 +4,9 @@
 Op deze (sport) trivia website kunnen gebruikers spelen tegen vrienden, kennissen of willekeurige tegenstanders. Deze (sport) trivia site stimuleert zijn gebruikers om zelf mee te denken in het maken van vragen en deze dan ook daadwerkelijk te maken. Er zijn leaderboards die continu bijhouden welke gebruikers het beste presteren op het gebied van vragen beantwoorden, maar ook op het gebied van vragen maken en beoordelen. 
 
 ##### Features
-Gebruikers moeten zich kunnen aanmelden met Facebook of e-mail en vervolgens een username en wachtwoord kunnen kiezen.
-Na registratie kunnen gebruikers inloggen met de door hun gekozen methode bij de registratie.
-Gebruikers kunnen een trivia Quiz starten. 
+* Gebruikers moeten zich kunnen aanmelden met Facebook of e-mail en vervolgens een username en wachtwoord kunnen kiezen.
+* Na registratie kunnen gebruikers inloggen met de door hun gekozen methode bij de registratie.
+* Gebruikers kunnen een trivia Quiz starten. 
 Gebruikers kunnen kiezen of ze 1 tegen 1 of 2 tegen 2 willen spelen. 
 Gebruikers kunnen tegen Facebook vrienden spelen, of een username zoeken om hier tegen te spelen. 
 Gebruikers kunnen ook tegen een willekeurige tegenstander spelen. 
@@ -161,6 +161,54 @@ def question():
         return render_template("question.html")
 ```
 
+Create 
+```
+@app.route(“/create”, methods = [“GET”, “POST”]
+def create():
+    # user clicks one of the buttons
+    if request.method == “POST”:
+        # use HTML buttons with the ‘name’ and ‘value’ attributes
+        if request.form[“choice”] == “create”:
+            return render_template(“create_question.html”)
+        elif request.form[“choice”] == “rate”:
+            return render_template(“rate_question.html”)
+    if request.method == “GET”:
+        return render_template(“create.html”)
+```
+
+Create_question
+```
+@app.route(“/create_question”, methods = [“GET”, “POST”]
+def create_question():
+    # user clicks on submit button
+    if request.method == “POST”:
+        “””
+        Store user entry in database
+        “””
+        return redirect(url_for(“create_question”))
+     
+    if request.method == “GET”:
+        return render_template(“create.html”)
+```
+
+Leaderboard
+```
+@app.route(“leaderboards”, methods = [“GET”]
+def leaderboards():
+    render_template(“leaderboards.html”)
+```
+
+Profile
+```
+@app.route(“profile”, methods = [“GET”, “POST”]
+def profile():
+    if request.method == “POST”
+        # user wants to change profile information
+        return render_template(“settings.html”)	
+    if request.method == “GET”:
+        return render_template(“profile.html”)
+```
+
 ##### Models/helpers
 Deze functies hieronder komen in onze helpers.py
 ```
@@ -176,11 +224,11 @@ def generate_question():
 ```
 Een vraag moet uit de api gehaald kunnen worden of uit het create database. Zodat de vragen random worden gekozen uit de API of het database. 
 ```
-def 
+def get_random_answer
 ```
+Deze functie moet voor drie verschillende buttons constant worden aangeroepen. Deze worden opgevraagd wanneer de trivia bezig is. 
 
-
-* Deze functies zullen in de application.py zitten
+Deze functies zullen in de application.py zitten
 ```
 def register():
 ```
