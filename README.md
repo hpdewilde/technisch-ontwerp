@@ -1,5 +1,5 @@
 # technisch-ontwerp
-## Projectvoorstel (updated) groep IK07
+## + Projectvoorstel (updated) groep IK07
 ##### Samenvatting
 Op deze (sport) trivia website kunnen gebruikers spelen tegen vrienden, kennissen of willekeurige tegenstanders. Deze (sport) trivia site stimuleert zijn gebruikers om zelf mee te denken in het maken van vragen en deze dan ook daadwerkelijk te maken. Er zijn leaderboards die continu bijhouden welke gebruikers het beste presteren op het gebied van vragen beantwoorden, maar ook op het gebied van vragen maken en beoordelen. 
 
